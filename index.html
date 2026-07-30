@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MsgOrbit — Under Development</title>
+    <meta
+      name="description"
+      content="MsgOrbit is currently under active development. All Your Business Messages. One Orbit. Contact us at messegeorbit@gmail.com."
+    />
+    <link rel="icon" type="image/png" href="assets/fav.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Particle Background & Glow Overlay -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="bg-grid"></div>
+
+    <!-- App Wrapper -->
+    <div class="app-wrapper">
+      <!-- Navbar Header -->
+      <header class="navbar">
+        <div class="nav-badge" id="nav-status-badge">
+          <span class="status-dot"></span>
+          <span>Under Active Development</span>
+        </div>
+      </header>
+
+      <!-- Main Single-Screen Content -->
+      <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+          <!-- Large Featured Brand Logo -->
+          <div class="hero-logo-wrapper">
+            <img
+              src="assets/logo.png"
+              alt="MsgOrbit Logo"
+              class="hero-logo-img"
+            />
+          </div>
+
+          <div class="hero-pill" id="hero-announcement-pill">
+            <span class="hero-pill-sparkle">✦</span>
+            <span>Something Great Is In The Works</span>
+          </div>
+
+          <h1 class="hero-title">
+            All Your Business Messages. <br />
+            <span class="highlight">One Orbit.</span>
+          </h1>
+
+          <p class="hero-tagline">
+            MsgOrbit is currently under active development. We are building an
+            all-in-one platform to consolidate your business messages seamlessly
+            into one orbit.
+          </p>
+
+          <!-- Direct Contact Card -->
+          <a
+            href="mailto:messegeorbit@gmail.com"
+            class="contact-card"
+            id="contact-box"
+          >
+            <div class="contact-card-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="contact-card-text">
+              <span class="contact-label">Get in touch with our team</span>
+              <span class="contact-email-link">messegeorbit@gmail.com</span>
+            </div>
+          </a>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-left">
+          <span class="footer-copy"
+            >&copy; 2026 MsgOrbit. All rights reserved.</span
+          >
+        </div>
+
+        <div class="footer-links">
+          <a href="mailto:messegeorbit@gmail.com" class="footer-link"
+            >messegeorbit@gmail.com</a
+          >
+          <a href="#" class="footer-link" id="footer-privacy-btn"
+            >Privacy Guarantee</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
