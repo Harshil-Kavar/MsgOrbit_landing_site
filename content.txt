@@ -1,0 +1,82 @@
+Part 1: Privacy Policy Content (privacy.html)
+Page Header / Hero Section
+Eyebrow / Badge: 🔒 Data Privacy & Protection
+
+Headline: Privacy Policy
+
+Subheadline: At MsgOrbit, we take your data security and privacy seriously. This policy outlines how we collect, use, and protect your information across our multi-tenant SaaS platform.
+
+Last Updated: September 2026
+
+Section 1: Information We Collect
+Organization & Account Details: Information provided during registration and profile management (Name, business email, phone number, address, website, GST number, and billing currency/timezone).
+
+WhatsApp Business Data: Connected WhatsApp Business Account (WABA) metadata, phone numbers, verified display names, and approved message templates synced via Meta's APIs.
+
+Contact Lists & Campaign Data: Customer contact information uploaded via CSV/Excel imports, custom tags, contact groups, and message broadcast history.
+
+Usage & Device Metadata: Session metadata captured on every login (IP address, device type, browser, operating system) and immutable audit logs recording user actions.
+
+Section 2: How We Use Your Information
+Platform Delivery: To operate and maintain the multi-tenant SaaS dashboard, including campaign scheduling, bot execution, and conversation inbox synchronization.
+
+Meta & API Compliance: To submit message templates for approval, process WhatsApp Flows, and enforce suppression lists (such as STOP keyword opt-outs).
+
+Security & Authentication: To manage secure token rotation (JWT), hash passwords using bcrypt, and prevent unauthorized access or account enumeration.
+
+Financial Settlements: To calculate pre-campaign estimated costs, reserve wallet funds, and process transaction histories.
+
+Section 3: Tenant Isolation & Data Security
+Strict Logical Separation: MsgOrbit implements robust tenant isolation architecture ensuring organizations can never access, view, or modify each other's data, contacts, or campaigns.
+
+Encryption & Redaction: All sensitive fields (tokens, passwords, OTP codes hashed with HMAC-SHA256) are securely encrypted. Sensitive parameters are automatically redacted from system logs.
+
+Section 4: User Rights & Contact
+Data Access & Management: Organizations can view, edit, or delete their profile data, contact directories, and campaign settings at any time through their user panel.
+
+Privacy Inquiries: For questions regarding this policy or data practices, contact our compliance team at privacy@msgorbit.com.
+
+
+
+
+
+
+
+
+
+
+
+
+Part 2: Terms of Service Content (terms.html)
+Page Header / Hero Section
+Eyebrow / Badge: 📄 Legal Agreements
+
+Headline: Terms of Service
+
+Subheadline: Please read these terms carefully before using MsgOrbit. By accessing or using our platform, you agree to be bound by these conditions.
+
+Last Updated: September 2026
+
+Section 1: Acceptance of Terms & Platform Access
+Service Scope: MsgOrbit provides a multi-tenant WhatsApp marketing, automation, and conversational inbox SaaS solution.
+
+Account Eligibility: Users must represent a legitimate business entity and maintain active, verified WhatsApp Business Accounts (WABA) compliant with Meta's Commerce and Business Policies.
+
+Organization Deactivation: System administrators reserve the right to suspend or deactivate organizations and associated user accounts that violate platform policies or terms of service.
+
+Section 2: Prepaid Wallet & Financial Terms
+Wallet Balance Model: Platform services operate on a prepaid wallet balance. Users must maintain sufficient funds to cover broadcast campaigns.
+
+Cost Estimation & Settlement: Estimated message costs are calculated and reserved prior to campaign launch. Actual costs are settled upon completion, with unused reserved amounts automatically refunded to the organization wallet.
+
+Top-Ups: Wallet credits are registered through platform administration following confirmed payment processing.
+
+Section 3: Acceptable Use & Compliance
+Marketing Suppression: Users must strictly respect customer opt-outs. Any inbound STOP keyword or manual opt-out will automatically populate the Marketing Suppression List, and messages to these numbers will be skipped.
+
+Prohibited Content: Users are strictly prohibited from sending spam, fraudulent content, hate speech, or violating Meta’s messaging guidelines. Failure to comply may lead to immediate suspension.
+
+Section 4: Limitation of Liability & Uptime
+System Health: MsgOrbit strives for high availability, monitored via real-time health checks covering database and Redis connectivity. However, the platform relies on Meta's WhatsApp Cloud API infrastructure.
+
+Limitation of Liability: MsgOrbit shall not be indirect, incidental, or consequential damages arising from campaign delivery failures, Meta policy changes, or third-party service interruptions.

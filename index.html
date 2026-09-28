@@ -1,116 +1,571 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MsgOrbit — Under Development</title>
-    <meta
-      name="description"
-      content="MsgOrbit is currently under active development. All Your Business Messages. One Orbit. Contact us at messegeorbit@gmail.com."
-    />
-    <link rel="icon" type="image/png" href="assets/fav.png" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Particle Background & Glow Overlay -->
-    <canvas id="particle-canvas"></canvas>
-    <div class="bg-grid"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MsgOrbit | The All-in-One WhatsApp Marketing &amp; Automation Platform</title>
+  <meta name="description" content="Official Meta WhatsApp Cloud API Partner Solution. Launch bulk campaigns with smart rate limiting, build visual bot automation flows, and manage customer chats from a single multi-tenant dashboard.">
+  <link rel="icon" type="image/png" href="assets/images/fav.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    <!-- App Wrapper -->
-    <div class="app-wrapper">
-      <!-- Navbar Header -->
-      <header class="navbar">
-        <div class="nav-badge" id="nav-status-badge">
-          <span class="status-dot"></span>
-          <span>Under Active Development</span>
+<body>
+
+  <!-- LIGHT MESH BACKGROUND DECORATION -->
+  <div class="light-mesh-glow" aria-hidden="true"></div>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="top-announcement-bar">
+    <span class="announcement-tag">DIRECT LINE</span>
+    <span>📞 Get in Touch with Us: +91 79841 99872</span>
+    <a href="mailto:messegeorbit@gmail.com" class="announcement-link">
+      messegeorbit@gmail.com &rarr;
+    </a>
+  </div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="MsgOrbit Home">
+        <img src="assets/images/logo.png" alt="MsgOrbit" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Started &rarr;</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-btn" aria-label="Toggle navigation menu">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav">
+    <nav class="mobile-links">
+      <a href="index.html" class="mobile-link active">Home</a>
+      <a href="features.html" class="mobile-link">Features</a>
+      <a href="pricing.html" class="mobile-link">Pricing</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+    </nav>
+    <div class="mobile-actions">
+      <a href="contact.html" class="btn btn-primary btn-lg" style="width: 100%;">Get Started &rarr;</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: HERO SECTION (THE HOOK) -->
+  <section class="hero" id="hero">
+    <div class="hero-dot-bg"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="reveal">
+        
+        <!-- Eyebrow / Badge -->
+        <div class="beacon-badge">
+          <span class="beacon-dot"></span>
+          <span>🚀 Official Meta WhatsApp Cloud API Partner Solution</span>
         </div>
-      </header>
 
-      <!-- Main Single-Screen Content -->
-      <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section" id="hero">
-          <!-- Large Featured Brand Logo -->
-          <div class="hero-logo-wrapper">
-            <img
-              src="assets/logo.png"
-              alt="MsgOrbit Logo"
-              class="hero-logo-img"
-            />
-          </div>
+        <!-- Main Headline -->
+        <h1 class="hero-title">
+          Omnichannel Scale. Zero Friction. <br>
+          <span class="hero-gradient-text">The All-in-One WhatsApp Marketing &amp; Automation Platform.</span>
+        </h1>
 
-          <div class="hero-pill" id="hero-announcement-pill">
-            <span class="hero-pill-sparkle">✦</span>
-            <span>Something Great Is In The Works</span>
-          </div>
+        <!-- Subheadline -->
+        <p class="hero-desc">
+          Connect your WhatsApp Business Account (WABA), launch high-converting bulk campaigns with smart rate limiting, build visual bot automation flows, and manage customer chats from a single multi-tenant dashboard.
+        </p>
 
-          <h1 class="hero-title">
-            All Your Business Messages. <br />
-            <span class="highlight">One Orbit.</span>
-          </h1>
+        <!-- CTA Action Buttons -->
+        <div class="hero-actions">
+          <a href="pricing.html" class="btn btn-primary btn-lg">Start Free Trial</a>
+          <a href="features.html" class="btn btn-secondary btn-lg">Explore Features</a>
+        </div>
 
-          <p class="hero-tagline">
-            MsgOrbit is currently under active development. We are building an
-            all-in-one platform to consolidate your business messages seamlessly
-            into one orbit.
-          </p>
-
-          <!-- Direct Contact Card -->
-          <a
-            href="mailto:messegeorbit@gmail.com"
-            class="contact-card"
-            id="contact-box"
-          >
-            <div class="contact-card-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                ></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
+        <!-- Visual Metric Cards (Displayed in Hero) -->
+        <div class="hero-metrics-grid">
+          
+          <!-- Metric 1 -->
+          <div class="hero-metric-card">
+            <div class="hero-metric-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
             </div>
-            <div class="contact-card-text">
-              <span class="contact-label">Get in touch with our team</span>
-              <span class="contact-email-link">messegeorbit@gmail.com</span>
+            <div>
+              <div class="hero-metric-label">Active Campaign Delivery</div>
+              <div class="hero-metric-val">99.4%</div>
+              <div class="hero-metric-sub">Real-time funnel tracking</div>
             </div>
-          </a>
-        </section>
-      </main>
+          </div>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-left">
-          <span class="footer-copy"
-            >&copy; 2026 MsgOrbit. All rights reserved.</span
-          >
+          <!-- Metric 2 -->
+          <div class="hero-metric-card">
+            <div class="hero-metric-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                <circle cx="12" cy="5" r="2"></circle>
+                <path d="M12 7v4"></path>
+                <line x1="8" y1="16" x2="8" y2="16"></line>
+                <line x1="16" y1="16" x2="16" y2="16"></line>
+              </svg>
+            </div>
+            <div>
+              <div class="hero-metric-label">Visual Bot Automations</div>
+              <div class="hero-metric-val" style="color: var(--primary-teal); display: flex; align-items: center; gap: 0.4rem;">
+                Active <span class="beacon-dot" style="margin-top: 2px;"></span>
+              </div>
+              <div class="hero-metric-sub">Node-based triggers &amp; paths</div>
+            </div>
+          </div>
+
+          <!-- Metric 3 -->
+          <div class="hero-metric-card">
+            <div class="hero-metric-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+              </svg>
+            </div>
+            <div>
+              <div class="hero-metric-label">Tenant Wallet Balance</div>
+              <div class="hero-metric-val">₹ 12,450</div>
+              <div class="hero-metric-sub">Automated cost settlement</div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="footer-links">
-          <a href="mailto:messegeorbit@gmail.com" class="footer-link"
-            >messegeorbit@gmail.com</a
-          >
-          <a href="#" class="footer-link" id="footer-privacy-btn"
-            >Privacy Guarantee</a
-          >
-        </div>
-      </footer>
+      </div>
     </div>
+  </section>
 
-    <!-- Toast Container -->
-    <div id="toast-container" class="toast-container"></div>
+  <!-- SECTION 2: SOCIAL PROOF / WHO IT'S FOR (THE AUDIENCE) -->
+  <section class="section-padding" id="audience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Target Audience</span>
+        <h2 class="section-title">Built for Businesses, Marketers, and Platform Operators</h2>
+        <p class="section-desc">Whether you are scaling your own brand or offering WhatsApp marketing as a service, MsgOrbit adapts to your workflow.</p>
+      </div>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-  </body>
+      <div class="why-grid">
+        
+        <!-- Audience Card 1 -->
+        <div class="why-card reveal">
+          <div class="why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="why-card-title">For Growth &amp; Marketing Teams</h3>
+          <p class="why-card-desc">Send bulk WhatsApp campaigns, segment leads with tags and groups, and track open, delivery, and read rates in real-time.</p>
+        </div>
+
+        <!-- Audience Card 2 -->
+        <div class="why-card reveal delay-1">
+          <div class="why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="why-card-title">For Support &amp; Customer Success</h3>
+          <p class="why-card-desc">Manage all customer chats in a unified team inbox with chat-style timelines and side-drawer contact insights.</p>
+        </div>
+
+        <!-- Audience Card 3 -->
+        <div class="why-card reveal delay-2">
+          <div class="why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="why-card-title">For SaaS &amp; Agency Operators</h3>
+          <p class="why-card-desc">Leverage a robust multi-tenant architecture with isolated organization spaces, wallet-based top-ups, and complete usage tracking.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: CORE VALUE PROPOSITIONS (THE 3 PILLARS) -->
+  <section class="section-padding" id="pillars" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Core Value Propositions</span>
+        <h2 class="section-title">Everything You Need to Dominate WhatsApp Engagement</h2>
+        <p class="section-desc">Streamline campaigns, automated conversational flows, and team collaboration within a robust enterprise infrastructure.</p>
+      </div>
+
+      <div class="features-grid">
+        
+        <!-- Pillar 1 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Smart Bulk Campaigns &amp; Analytics</h3>
+          <p class="feature-desc">Run targeted campaigns using custom contact groups or tags. Map dynamic template variables (First Name, Order ID) with fallbacks, schedule launches, and monitor real-time delivery funnels from Sent to Read.</p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="feature-card reveal delay-1">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="6" y1="3" x2="6" y2="15"></line>
+              <circle cx="18" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <path d="M18 9a9 9 0 0 1-9 9"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Node-Based Visual Bot Builder</h3>
+          <p class="feature-desc">Automate conversations effortlessly without coding. Build interactive decision trees with wait states, condition branches, and test your logic instantly using the built-in live simulation tool.</p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="feature-card reveal delay-2">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Unified Team Inbox &amp; Wallet Control</h3>
+          <p class="feature-desc">Keep your team synchronized with a single inbox for all inbound and outbound chats. Manage wallet balances securely with pre-campaign cost estimates and automated refunds for unsent messages.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: INTERACTIVE FEATURE SPOTLIGHT (HOW MSGORBIT WORKS IN 3 SIMPLE STEPS) -->
+  <section class="section-padding" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Interactive Feature Spotlight</span>
+        <h2 class="section-title">From Connection to Conversion in Minutes</h2>
+        <p class="section-desc">Getting started with MsgOrbit requires zero complex infrastructure. Here is how your workflow flows:</p>
+      </div>
+
+      <div class="steps-grid">
+        
+        <!-- Step 1 -->
+        <div class="step-card reveal">
+          <div class="step-header-wrap">
+            <div class="step-badge">01</div>
+            <span class="step-tag">Step 1</span>
+          </div>
+          <h3 class="step-title">Connect Your WABA</h3>
+          <p class="step-desc">Link your official WhatsApp Business Account securely using Meta's Embedded Signup flow. Sync approved phone numbers and business profiles instantly.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card reveal delay-1">
+          <div class="step-header-wrap">
+            <div class="step-badge">02</div>
+            <span class="step-tag">Step 2</span>
+          </div>
+          <h3 class="step-title">Import Contacts &amp; Build Campaigns</h3>
+          <p class="step-desc">Upload CSV or Excel contact lists, organize audiences with custom tags and groups, select your approved Meta template, and schedule your broadcast with smart rate-limiting.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card reveal delay-2">
+          <div class="step-header-wrap">
+            <div class="step-badge">03</div>
+            <span class="step-tag">Step 3</span>
+          </div>
+          <h3 class="step-title">Automate &amp; Engage</h3>
+          <p class="step-desc">Let visual conversation bots handle incoming customer inquiries 24/7 while your support team manages complex chats in the unified team inbox.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: BUILT-IN DEVELOPER & API CAPABILITIES -->
+  <section class="section-padding" id="developer" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Developer &amp; Integrations</span>
+        <h2 class="section-title">Built for Developers &amp; Seamless Integrations</h2>
+        <p class="section-desc">Extend MsgOrbit into your existing CRM, e-commerce store, or custom applications using our robust developer tools.</p>
+      </div>
+
+      <div class="features-grid">
+        
+        <!-- Dev Card 1 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class="feature-title">Interactive API Documentation</h3>
+          <p class="feature-desc">Clear, developer-friendly endpoints available at /docs for full platform integration.</p>
+        </div>
+
+        <!-- Dev Card 2 -->
+        <div class="feature-card reveal delay-1">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+          </div>
+          <h3 class="feature-title">WhatsApp Flows Support</h3>
+          <p class="feature-desc">Build structured interactive conversation forms and upload Flow JSON definitions directly into the platform.</p>
+        </div>
+
+        <!-- Dev Card 3 -->
+        <div class="feature-card reveal delay-2">
+          <div class="feature-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Real-Time Health Checks</h3>
+          <p class="feature-desc">Transparent system status monitoring covering database connectivity, Redis uptime, and core server health.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: TRUST & ENTERPRISE SECURITY BANNER -->
+  <section class="section-padding" id="security">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Security &amp; Isolation</span>
+        <h2 class="section-title">Enterprise-Grade Security &amp; Absolute Tenant Isolation</h2>
+        <p class="section-desc">Your data and your customers' data remain completely secure and private under rigorous compliance standards.</p>
+      </div>
+
+      <div class="why-grid">
+        
+        <!-- Security Card 1 -->
+        <div class="why-card reveal">
+          <div class="why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 class="why-card-title">Tenant Isolation</h3>
+          <p class="why-card-desc">Complete logical separation ensuring organizations can never access peer data.</p>
+        </div>
+
+        <!-- Security Card 2 -->
+        <div class="why-card reveal delay-1">
+          <div class="why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3 class="why-card-title">Encrypted Credentials</h3>
+          <p class="why-card-desc">Passwords hashed with bcrypt and JWT access tokens with strict 15-minute rotation cycles.</p>
+        </div>
+
+        <!-- Security Card 3 -->
+        <div class="why-card reveal delay-2">
+          <div class="why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 class="why-card-title">Meta Compliance</h3>
+          <p class="why-card-desc">Built-in automated suppression lists handling user opt-outs and STOP keywords seamlessly.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FREQUENTLY ASKED QUESTIONS (FAQ) -->
+  <section class="section-padding" id="faq" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Got Questions? We’ve Got Answers.</h2>
+        <p class="section-desc">Learn how template clearance, tenant isolation, prepaid wallets, and automated compliance work on MsgOrbit.</p>
+      </div>
+
+      <div class="faq-list reveal">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-item active">
+          <button class="faq-question" aria-expanded="true">
+            <span>How does MsgOrbit handle WhatsApp template approvals?</span>
+            <span class="faq-icon-wrap">&plus;</span>
+          </button>
+          <div class="faq-answer" style="max-height: 200px;">
+            <div class="faq-answer-inner">
+              You can create message templates directly inside the platform (categorized as Marketing, Utility, or Authentication with custom headers, buttons, and variables) and submit them to Meta for official approval with live preview bubbles.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is a multi-tenant platform and how does tenant isolation work?</span>
+            <span class="faq-icon-wrap">&plus;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Tenant isolation ensures that each organization operating on MsgOrbit has a completely secure, private sandbox. Organizations can never access each other’s contacts, campaigns, or wallet data.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How does the wallet and financial tracking system work?</span>
+            <span class="faq-icon-wrap">&plus;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              MsgOrbit uses a prepaid wallet balance model. Before a campaign launches, the estimated cost is calculated and reserved from your wallet. Once completed, the actual cost is settled, and any unused reserved amount is automatically refunded.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What happens if a customer replies with 'STOP'?</span>
+            <span class="faq-icon-wrap">&plus;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              MsgOrbit features an automated Marketing Suppression List. Inbound STOP keywords or user opt-outs automatically add the number to the suppression list, ensuring they are skipped in all future marketing campaigns to maintain compliance.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: FINAL CALL-TO-ACTION (FOOTER BANNER) -->
+  <section class="final-cta">
+    <div class="container reveal">
+      <div class="cta-banner">
+        <h2 class="cta-title">Ready to Transform Your WhatsApp Marketing?</h2>
+        <p class="cta-desc">Join businesses scaling their communication with MsgOrbit today.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get Started Free / Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="logo footer-logo" aria-label="MsgOrbit Home">
+            <img src="assets/images/logo.png" alt="MsgOrbit" class="brand-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            The All-in-One WhatsApp Marketing &amp; Automation Platform. Multi-tenant SaaS dashboard, campaign scheduling, visual bot automation, and real-time team inbox.
+          </p>
+          <div class="footer-status-pill">
+            <span class="footer-status-dot"></span>
+            All Systems Operational (99.99%)
+          </div>
+        </div>
+
+        <!-- Col 1: Platform Navigation -->
+        <div>
+          <h4 class="footer-col-heading">Navigation</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="index.html">Home</a></li>
+            <li class="footer-link-item"><a href="features.html">Features Suite</a></li>
+            <li class="footer-link-item"><a href="pricing.html">Pricing Plans</a></li>
+            <li class="footer-link-item"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Platform Modules -->
+        <div>
+          <h4 class="footer-col-heading">Platform Modules</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="features.html#module-contacts">Audience &amp; Contacts</a></li>
+            <li class="footer-link-item"><a href="features.html#module-waba">WABA &amp; Meta Tools</a></li>
+            <li class="footer-link-item"><a href="features.html#module-campaigns">Campaign Wizard</a></li>
+            <li class="footer-link-item"><a href="features.html#module-bots">Visual Automation</a></li>
+            <li class="footer-link-item"><a href="features.html#module-inbox">Team Inbox &amp; Wallet</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Legal & Trust -->
+        <div>
+          <h4 class="footer-col-heading">Legal &amp; Trust</h4>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="footer-link-item"><a href="terms.html">Terms of Service</a></li>
+            <li class="footer-link-item"><a href="pricing.html#wallet">Prepaid Wallet Terms</a></li>
+            <li class="footer-link-item"><a href="contact.html">Enterprise Inquiries</a></li>
+            <li class="footer-link-item"><a href="contact.html">Technical Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 MsgOrbit Technologies Inc. All rights reserved.</div>
+        <div class="footer-compliance-tag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>SOC2 Type II &amp; GDPR Compliant</span>
+        </div>
+        <div class="footer-legal-links-wrap">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- SCROLL TO TOP (BOTTOM TO TOP) FLOATING BUTTON -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Unified Interactive JavaScript -->
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
