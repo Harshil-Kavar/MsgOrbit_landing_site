@@ -320,33 +320,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 10. Interactive Pricing Volume Calculator ---
-  const volumeSlider = document.getElementById('contact-volume-slider');
+  // --- 10. Interactive WhatsApp Message Delivery & Volume Calculator ---
+  const volumeSlider = document.getElementById('contact-volume-slider') || document.getElementById('message-volume-slider');
   const sliderVolumeVal = document.getElementById('slider-volume-val');
   const sliderCostVal = document.getElementById('slider-cost-val');
   const sliderRecommendedPlan = document.getElementById('slider-recommended-plan');
+  const sliderSavingsVal = document.getElementById('slider-savings-val');
+  const calcTypeBtns = document.querySelectorAll('.calc-type-btn');
+  const calcPresetBtns = document.querySelectorAll('.calc-preset-btn');
 
-  if (volumeSlider && sliderVolumeVal && sliderCostVal && sliderRecommendedPlan) {
-    const updateCalculator = () => {
-      const volume = parseInt(volumeSlider.value, 10);
-      sliderVolumeVal.textContent = volume.toLocaleString('en-US') + ' Active Contacts';
+  let currentRatePerMsg = 1.06; // Default to Marketing message rate (₹1.06)
 
+  if (calcTypeBtns.length > 0) {
+    calcTypeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        calcTypeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentRatePerMsg = parseFloat(btn.getAttribute('data-rate')) || 1.06;
+        if (volumeSlider) updateCalculator();
+      });
+    });
+  }
+
+  if (calcPresetBtns.length > 0 && volumeSlider) {
+    calcPresetBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        calcPresetBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const val = parseInt(btn.getAttribute('data-val'), 10);
+        if (val) {
+          volumeSlider.value = val;
+          updateCalculator();
+        }
+      });
+    });
+  }
+
+  const formatINR = (val) => {
+    return '₹' + Math.round(val).toLocaleString('en-IN');
+  };
+
+  const updateCalculator = () => {
+    if (!volumeSlider || !sliderVolumeVal) return;
+    const volume = parseInt(volumeSlider.value, 10);
+    sliderVolumeVal.textContent = volume.toLocaleString('en-IN') + ' Messages';
+
+    const estimatedDeliveryCost = volume * currentRatePerMsg;
+    if (sliderCostVal) {
+      sliderCostVal.textContent = formatINR(estimatedDeliveryCost);
+    }
+
+    if (sliderRecommendedPlan) {
       if (volume <= 5000) {
-        sliderCostVal.textContent = '$29/mo';
-        sliderRecommendedPlan.textContent = 'Starter Plan';
+        sliderRecommendedPlan.textContent = 'Monthly Plan (₹499/mo)';
+        if (sliderSavingsVal) sliderSavingsVal.textContent = 'Ideal for low-volume testing & quick broadcasts';
       } else if (volume <= 25000) {
-        sliderCostVal.textContent = '$79/mo';
-        sliderRecommendedPlan.textContent = 'Professional Plan (Recommended)';
-      } else if (volume <= 100000) {
-        const estCost = Math.round(79 + ((volume - 25000) / 1000) * 1.5);
-        sliderCostVal.textContent = '$' + estCost + '/mo';
-        sliderRecommendedPlan.textContent = 'Professional + Scale Overages';
+        sliderRecommendedPlan.textContent = 'Quarterly Plan (₹1,199 / 3mo)';
+        if (sliderSavingsVal) sliderSavingsVal.textContent = 'Save ~20% (₹298 savings) vs Monthly billing';
       } else {
-        sliderCostVal.textContent = '$199+/mo';
-        sliderRecommendedPlan.textContent = 'Enterprise Plan (Custom SLA)';
+        sliderRecommendedPlan.textContent = 'Annual Plan (₹3,399 / 12mo)';
+        if (sliderSavingsVal) sliderSavingsVal.textContent = 'Best Value: Save >40% (₹2,589 savings) with Annual plan';
       }
-    };
+    }
+  };
 
+  if (volumeSlider) {
     volumeSlider.addEventListener('input', updateCalculator);
     updateCalculator();
   }

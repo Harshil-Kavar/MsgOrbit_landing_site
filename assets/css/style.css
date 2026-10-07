@@ -1221,7 +1221,7 @@ button, input, select, textarea {
   background-color: var(--primary-teal);
 }
 
-/* 17. Pricing Switch & Cards */
+/* 17. Pricing Switch, Cards, Rate Matrix & Prepaid Wallet Styles */
 .pricing-switch-wrap, .pricing-toggle-wrap {
   display: flex;
   align-items: center;
@@ -1286,9 +1286,9 @@ button, input, select, textarea {
   margin-left: 0.4rem;
 }
 
-.pricing-grid {
+.pricing-grid, .pricing-grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   align-items: stretch;
 }
@@ -1302,60 +1302,106 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pricing-card:hover {
   box-shadow: var(--shadow-hover);
-  border-color: rgba(7, 94, 84, 0.3);
-  transform: translateY(-4px);
+  border-color: rgba(7, 94, 84, 0.35);
+  transform: translateY(-8px);
 }
 
+/* Most Popular Plan (Quarterly) */
 .pricing-card-featured, .pricing-card-popular {
   border: 2px solid var(--primary-teal);
   box-shadow: var(--shadow-teal-glow), var(--shadow-lg);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFCFC 100%);
   transform: scale(1.02);
 }
 
 .pricing-card-featured:hover, .pricing-card-popular:hover {
-  transform: scale(1.02) translateY(-4px);
+  transform: scale(1.02) translateY(-8px);
+  box-shadow: 0 16px 38px rgba(7, 94, 84, 0.18);
+}
+
+/* Best Value Plan (Annual) */
+.pricing-card-best-value {
+  border: 2px solid var(--brand-green-dark);
+  box-shadow: 0 12px 34px rgba(18, 140, 126, 0.14), var(--shadow-md);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5FBF8 100%);
+}
+
+.pricing-card-best-value:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-green);
+  box-shadow: var(--shadow-green-glow), var(--shadow-xl);
 }
 
 .popular-badge, .pricing-badge-popular {
   position: absolute;
   top: -14px;
-  right: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: var(--primary-teal);
   color: #FFFFFF;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  padding: 0.35rem 0.95rem;
+  padding: 0.38rem 1.1rem;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 12px rgba(7, 94, 84, 0.3);
+  box-shadow: 0 4px 14px rgba(7, 94, 84, 0.35);
+  white-space: nowrap;
+}
+
+.best-value-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--brand-green-dark) 0%, var(--primary-teal) 100%);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.38rem 1.1rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(18, 140, 126, 0.35);
+  white-space: nowrap;
 }
 
 .pricing-plan-name {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.pricing-plan-target {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.65rem;
 }
 
 .pricing-plan-desc {
   font-size: var(--fs-body-sm);
   color: var(--text-muted);
-  margin-bottom: 1.5rem;
-  min-height: 44px;
+  margin-bottom: 1.25rem;
+  min-height: 42px;
+  line-height: 1.5;
 }
 
 .pricing-price-wrap {
   display: flex;
   align-items: baseline;
   gap: 0.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .price-currency {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   font-weight: 800;
   color: var(--text-main);
 }
@@ -1371,7 +1417,52 @@ button, input, select, textarea {
 .price-period {
   color: var(--text-muted);
   font-size: var(--fs-body-sm);
+  font-weight: 700;
+  margin-left: 0.25rem;
+}
+
+.pricing-sub-price {
+  font-size: 0.85rem;
+  color: var(--text-muted);
   font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.pricing-savings-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+  align-self: flex-start;
+}
+
+.pricing-savings-pill.pill-green {
+  background-color: var(--brand-green-subtle);
+  color: var(--primary-teal-dark);
+  border: 1px solid var(--brand-green-border);
+}
+
+.pricing-savings-pill.pill-teal {
+  background-color: var(--primary-teal-light);
+  color: var(--primary-teal);
+  border: 1px solid var(--primary-teal-border);
+}
+
+.pricing-savings-pill.pill-neutral {
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+.pricing-divider {
+  height: 1px;
+  background-color: var(--border-light);
+  margin: 0.5rem 0 1.25rem;
 }
 
 .pricing-features-list, .pricing-features {
@@ -1390,21 +1481,301 @@ button, input, select, textarea {
   gap: 0.65rem;
   font-size: var(--fs-body-sm);
   color: var(--text-secondary);
+  line-height: 1.45;
 }
 
 .pricing-feature-icon, .pricing-feature-check {
   color: var(--brand-green-dark);
+  background-color: var(--brand-green-subtle);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 1px;
+}
+
+.pricing-feature-icon svg, .pricing-feature-check svg {
+  stroke: var(--brand-green-dark);
 }
 
 .pricing-cta {
   width: 100%;
   text-align: center;
   margin-top: auto;
+  justify-content: center;
 }
 
-/* Interactive Volume Calculator */
+/* Plan Assurance Quick Bar */
+.plan-assurance-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.75rem;
+  margin: 3rem auto 0;
+  max-width: 1080px;
+}
+
+.assurance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.assurance-icon {
+  color: var(--primary-teal);
+  flex-shrink: 0;
+}
+
+/* WhatsApp Message Delivery Rate Cards */
+.rates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.rate-card {
+  background-color: var(--bg-surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  padding: 2.25rem 1.85rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(7, 94, 84, 0.35);
+}
+
+.rate-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.rate-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background-color: var(--primary-teal-light);
+  color: var(--primary-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.rate-tag-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-full);
+}
+
+.rate-tag-badge.badge-marketing {
+  background-color: var(--color-purple-bg);
+  color: var(--color-purple);
+  border: 1px solid var(--color-purple-border);
+}
+
+.rate-tag-badge.badge-utility {
+  background-color: var(--color-blue-bg);
+  color: var(--color-blue);
+  border: 1px solid var(--color-blue-border);
+}
+
+.rate-tag-badge.badge-auth {
+  background-color: var(--brand-green-subtle);
+  color: var(--brand-green-dark);
+  border: 1px solid var(--brand-green-border);
+}
+
+.rate-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.rate-desc {
+  font-size: var(--fs-body-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  min-height: 42px;
+}
+
+.rate-price-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.rate-price-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.rate-currency {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.rate-num {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.rate-unit {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.rate-delivery-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--brand-green-dark);
+  background-color: #FFFFFF;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--brand-green-border);
+}
+
+.rate-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.rate-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: var(--fs-body-sm);
+  color: var(--text-secondary);
+}
+
+.rate-check-icon {
+  color: var(--brand-green-dark);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rate-refund-box {
+  margin-top: auto;
+  padding: 0.85rem 1rem;
+  background-color: var(--brand-green-subtle);
+  border: 1px dashed var(--brand-green-border);
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary-teal-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Prepaid Wallet Architecture Cards */
+.wallet-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.wallet-flow-card {
+  background-color: var(--bg-surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  padding: 2rem 1.65rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wallet-flow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(7, 94, 84, 0.3);
+}
+
+.wallet-step-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--primary-teal-light);
+  color: var(--primary-teal);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wallet-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background-color: var(--brand-green-subtle);
+  color: var(--brand-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.wallet-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+.wallet-card-desc {
+  font-size: var(--fs-body-sm);
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Interactive Volume & Delivery Rate Calculator */
 .pricing-calculator-card {
   background-color: var(--bg-surface-card);
   border: 1px solid var(--border-light);
@@ -1412,11 +1783,73 @@ button, input, select, textarea {
   padding: 2.75rem;
   box-shadow: var(--shadow-md);
   margin: 3.5rem auto 0;
-  max-width: 880px;
+  max-width: 960px;
+}
+
+.calc-type-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.calc-type-btn {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-whatsapp);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.calc-type-btn:hover {
+  border-color: var(--primary-teal-border);
+  background-color: #FFFFFF;
+}
+
+.calc-type-btn.active {
+  border-color: var(--primary-teal);
+  background-color: var(--primary-teal-light);
+  box-shadow: 0 0 0 1px var(--primary-teal);
+}
+
+.calc-type-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.calc-type-rate {
+  font-size: 0.78rem;
+  color: var(--primary-teal);
+  font-weight: 800;
 }
 
 .volume-slider-wrap {
-  margin: 1.75rem 0 2.25rem;
+  margin: 1.75rem 0 2rem;
+}
+
+.volume-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.volume-slider-label {
+  font-size: var(--fs-body-sm);
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.volume-slider-display {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-teal);
 }
 
 .volume-slider-input {
@@ -1436,7 +1869,7 @@ button, input, select, textarea {
   border-radius: 50%;
   background: var(--brand-green);
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
   border: 2px solid #FFFFFF;
   transition: transform var(--transition-fast);
 }
@@ -1445,16 +1878,98 @@ button, input, select, textarea {
   transform: scale(1.2);
 }
 
-.calc-result-box {
+.calc-preset-pills {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.calc-preset-btn {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.calc-preset-btn:hover, .calc-preset-btn.active {
+  background-color: var(--primary-teal);
+  color: #FFFFFF;
+  border-color: var(--primary-teal);
+}
+
+.calc-result-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 1.75rem;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  align-items: center;
+}
+
+.calc-cost-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.calc-cost-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.calc-cost-val {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+}
+
+.calc-cost-note {
+  font-size: 0.78rem;
+  color: var(--brand-green-dark);
+  font-weight: 700;
+}
+
+.calc-plan-recommendation {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  padding: 1.35rem 1.75rem;
-  flex-wrap: wrap;
-  gap: 1rem;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.calc-rec-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.calc-rec-plan {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary-teal);
+}
+
+.calc-rec-savings {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 
 /* Comparison Table */
@@ -2394,7 +2909,7 @@ button, input, select, textarea {
     padding: 1.6rem 1.35rem;
   }
 
-  .pricing-grid {
+  .pricing-grid, .pricing-grid-3 {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
@@ -2407,8 +2922,33 @@ button, input, select, textarea {
     transform: translateY(-4px);
   }
 
+  .pricing-card-best-value:hover {
+    transform: translateY(-4px);
+  }
+
   .pricing-card {
     padding: 2rem 1.5rem;
+  }
+
+  .plan-assurance-bar {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .rates-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .wallet-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .calc-type-selector {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
   }
 
   .pricing-calculator-card {
@@ -2417,10 +2957,15 @@ button, input, select, textarea {
   }
 
   .calc-result-box {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: stretch;
     text-align: center;
-    gap: 1rem;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .calc-cost-breakdown {
+    align-items: center;
   }
 
   .mockup-body {
@@ -2527,6 +3072,11 @@ button, input, select, textarea {
   .analytics-counters {
     grid-template-columns: 1fr;
     gap: 0.85rem;
+  }
+
+  .plan-assurance-bar {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .pricing-price-wrap {
